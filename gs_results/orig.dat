@@ -1,0 +1,45 @@
+*********** models/pipe4_tests/12284.xml ************
+Picked up _JAVA_OPTIONS: -Xms1024m -Xmx1024m -XX:MaxPermSize=512m
+Starting  Sequential
+========================
+Jun 10, 2014 1:08:26 PM pipe.reachability.algorithm.sequential.SequentialStateSpaceExplorer stateSpaceExploration
+INFO: Took 12284 iterations to explore state space
+Jun 10, 2014 1:08:26 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
+INFO: Took 14972209000 to solve state space
+Processed transitions: 102364
+12284 different states
+Jun 10, 2014 1:08:47 PM pipe.steadystate.algorithm.GaussSeidelSolver solve
+INFO: Took 2292 iterations to converge
+Jun 10, 2014 1:08:47 PM pipe.steadystate.algorithm.AXEqualsBSolver timeAndSolve
+INFO: Steady state solved in 20465253000
+Picked up _JAVA_OPTIONS: -Xms1024m -Xmx1024m -XX:MaxPermSize=512m
+Starting  Parallel 100
+========================
+Jun 10, 2014 1:08:56 PM pipe.reachability.algorithm.parallel.MassiveParallelStateSpaceExplorer stateSpaceExploration
+INFO: Took 17 iterations to explore state space
+Jun 10, 2014 1:08:56 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
+INFO: Took 7926528000 to solve state space
+Processed transitions: 102373
+12284 different states
+Jun 10, 2014 1:09:02 PM pipe.steadystate.algorithm.ParallelSubmitter solve
+INFO: Took 167 iterations to converge
+Jun 10, 2014 1:09:02 PM pipe.steadystate.algorithm.AXEqualsBSolver timeAndSolve
+INFO: Steady state solved in 4606110000
+
+
+
+Picked up _JAVA_OPTIONS: -Xms1024m -Xmx1024m -XX:MaxPermSize=512m
+Starting  Parallel 100
+========================
+Processed transitions: 102364
+Jun 10, 2014 3:10:04 PM pipe.reachability.algorithm.parallel.MassiveParallelStateSpaceExplorer stateSpaceExploration
+INFO: Took 17 iterations to explore state space
+12284 different states
+Jun 10, 2014 3:10:04 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
+INFO: Took 7662946000 to solve state space
+******* Starting Parallel aynch GS steady state solving *********
+Jun 10, 2014 3:10:19 PM pipe.steadystate.algorithm.ParallelSubmitter solve
+INFO: Took 504 iterations to converge
+Jun 10, 2014 3:10:19 PM pipe.steadystate.algorithm.AXEqualsBSolver timeAndSolve
+INFO: Steady state solved in 13684708000
+----------------------

@@ -1,0 +1,57 @@
+*********** models/gs_tests/1350.xml ************
+Picked up _JAVA_OPTIONS: -Xms1024m -Xmx1024m -XX:MaxPermSize=512m
+Starting  Sequential 
+========================
+Jun 10, 2014 11:30:02 PM pipe.reachability.algorithm.sequential.SequentialStateSpaceExplorer stateSpaceExploration
+INFO: Took 1350 iterations to explore state space
+Jun 10, 2014 11:30:02 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
+INFO: Took 2435800000 to solve state space
+Processed transitions: 9450
+1350 different states
+****** Solving steady state with method: sequential Gauss-Seidel *******
+Jun 10, 2014 11:30:03 PM pipe.steadystate.algorithm.GaussSeidelSolver solve
+INFO: Took 277 iterations to converge
+Jun 10, 2014 11:30:03 PM pipe.steadystate.algorithm.AXEqualsBSolver timeAndSolve
+INFO: Steady state solved in 472032000
+Picked up _JAVA_OPTIONS: -Xms1024m -Xmx1024m -XX:MaxPermSize=512m
+Starting  Parallel 100
+========================
+Jun 10, 2014 11:30:09 PM pipe.reachability.algorithm.parallel.MassiveParallelStateSpaceExplorer stateSpaceExploration
+INFO: Took 3 iterations to explore state space
+Jun 10, 2014 11:30:09 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
+INFO: Took 2060923000 to solve state space
+Processed transitions: 9450
+1350 different states
+****** Solving steady state with method: asynchronous Gauss-Seidel with 1 sub iterations *******
+Jun 10, 2014 11:30:11 PM pipe.steadystate.algorithm.ParallelGaussSeidel solve
+INFO: Took 1104 iterations to converge
+Jun 10, 2014 11:30:11 PM pipe.steadystate.algorithm.AXEqualsBSolver timeAndSolve
+INFO: Steady state solved in 1249355000
+Picked up _JAVA_OPTIONS: -Xms1024m -Xmx1024m -XX:MaxPermSize=512m
+Starting  Parallel 100
+========================
+Jun 10, 2014 11:30:14 PM pipe.reachability.algorithm.parallel.MassiveParallelStateSpaceExplorer stateSpaceExploration
+INFO: Took 3 iterations to explore state space
+Jun 10, 2014 11:30:14 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
+INFO: Took 1697711000 to solve state space
+Processed transitions: 9450
+1350 different states
+****** Solving steady state with method: asynchronous Gauss-Seidel with 5 sub iterations *******
+Jun 10, 2014 11:30:15 PM pipe.steadystate.algorithm.ParallelGaussSeidel solve
+INFO: Took 246 iterations to converge
+Jun 10, 2014 11:30:15 PM pipe.steadystate.algorithm.AXEqualsBSolver timeAndSolve
+INFO: Steady state solved in 1197461000
+Picked up _JAVA_OPTIONS: -Xms1024m -Xmx1024m -XX:MaxPermSize=512m
+Starting  Parallel 100
+========================
+Jun 10, 2014 11:30:22 PM pipe.reachability.algorithm.parallel.MassiveParallelStateSpaceExplorer stateSpaceExploration
+INFO: Took 3 iterations to explore state space
+Jun 10, 2014 11:30:22 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
+INFO: Took 1665589000 to solve state space
+Processed transitions: 9450
+1350 different states
+****** Solving steady state with method: asynchronous Gauss-Seidel with 10 sub iterations *******
+Jun 10, 2014 11:30:23 PM pipe.steadystate.algorithm.ParallelGaussSeidel solve
+INFO: Took 139 iterations to converge
+Jun 10, 2014 11:30:23 PM pipe.steadystate.algorithm.AXEqualsBSolver timeAndSolve
+INFO: Steady state solved in 686817000

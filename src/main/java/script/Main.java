@@ -15,7 +15,6 @@ import uk.ac.imperial.pipe.io.PetriNetIOImpl;
 import uk.ac.imperial.pipe.io.PetriNetReader;
 import uk.ac.imperial.pipe.models.petrinet.PetriNet;
 import uk.ac.imperial.pipe.parsers.UnparsableException;
-import uk.ac.imperial.state.ClassifiedState;
 import uk.ac.imperial.state.Record;
 
 import javax.xml.bind.JAXBException;
@@ -39,23 +38,21 @@ import java.util.logging.Logger;
 public class Main {
     private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
 
+    /**
+     * Command line options
+     */
     private static final Options options = new Options();
     static {
         options.addOption("f", true, "File to parse");
         options.addOption("s", false, "Run sequentially");
         options.addOption("p", true, "Run in parallel with the specified number of threads per state");
-        options.addOption("ss", false, "Solve the steady state with jacobi");
-        options.addOption("b", true, "Bound for Jacobi");
+        options.addOption("ss", false, "Solve the steady state");
+        options.addOption("j", true, "Run Jacobi with bounded value");
+        options.addOption("g", false, "Run Gauss-Seidel");
+        options.addOption("sub", true, "The number of sub iterations to perform in the asynchronous Gauss-Seidel implementation");
     }
 
     /**
-     *
-     * Args should be:
-     *  - filename e.g. models/foo.xml
-     *  - algorithm p => parallel, s => sequential
-     *  - solve steady state too? y => yes n => no
-     *  - if processing in parallel number of threads allowed
-     *  -
      *
      *
      * @param args
@@ -129,34 +126,41 @@ public class Main {
              Input stateInputStream = new Input(stateStream)) {
             MultiStateReader reader = new EntireStateReader(kryoIo);
             List<Record> records = new ArrayList<>(reader.readRecords(inputStream));
-            Map<Integer, ClassifiedState> mappings = reader.readStates(stateInputStream);
+//            Map<Integer, ClassifiedState> mappings = reader.readStates(stateInputStream);
 
             SteadyStateBuilder builder = new SteadyStateBuilderImpl();
             ExecutorService executorService = null;
             SteadyStateSolver solver;
+            String solverName;
             if (cmd.hasOption("s")) {
-                if (cmd.hasOption("b")) {
+                if (cmd.hasOption("j")) {
                     Integer maxIterations = Integer.valueOf(cmd.getOptionValue("b"));
                     solver = builder.buildBoundedSequentialJacobi(maxIterations);
+                    solverName = "sequential jacobi with a bound of " + maxIterations;
                 } else {
-                    solver = builder.buildSequentialJacobi();
+                    solver = builder.buildGaussSeidel();
+                    solverName = "sequential Gauss-Seidel";
                 }
             } else {
                 executorService = Executors.newFixedThreadPool(8);
-                if (cmd.hasOption("b")) {
+                if (cmd.hasOption("j")) {
                     Integer maxIterations = Integer.valueOf(cmd.getOptionValue("b"));
                     solver = builder.buildBoundedParallelJacobiSolver(executorService, 8, maxIterations);
+                    solverName = "parallel jacobi with a bound of " + maxIterations;
                 } else {
-                    solver = builder.buildJacobi(executorService, 8);
+                    Integer subIterations = Integer.valueOf(cmd.getOptionValue("sub"));
+                    solver = builder.buildAsynchronousGaussSeidel(executorService, 8, subIterations);
+                    solverName = "asynchronous Gauss-Seidel with " + subIterations + " sub iterations";
                 }
             }
-            Map<Integer, Double> steadyState = solve(solver, records, "Parallel");
+            Map<Integer, Double> steadyState = solve(solver, records, solverName);
             if (executorService != null) {
                 executorService.shutdownNow();
             }
         }
     }
     private static Map<Integer, Double> solve(SteadyStateSolver solver, List<Record> records, String method) {
+        System.out.println("****** Solving steady state with method: " + method + " *******");
         return solver.solve(records);
     }
 
