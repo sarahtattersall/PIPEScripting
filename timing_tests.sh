@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-FILES=models/gs_tests/*
+FILES=$1/*
 for f in $FILES
 do
   echo "Processing $f file..."
