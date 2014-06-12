@@ -36,7 +36,12 @@ import java.util.logging.Logger;
  * Class used to run state space exploration and optionally steady state solver
  */
 public class Main {
+    /**
+     * Class logger
+     */
     private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
+
+    private static final int THREADS = 4;
 
     /**
      * Command line options
@@ -107,7 +112,7 @@ public class Main {
                 VanishingExplorer vanishingExplorer = new OnTheFlyVanishingExplorer(explorerUtilities);
 
                 MassiveParallelStateSpaceExplorer stateSpaceExplorer =
-                        new MassiveParallelStateSpaceExplorer(explorerUtilities, vanishingExplorer, processor, statesPerThread);
+                        new MassiveParallelStateSpaceExplorer(explorerUtilities, vanishingExplorer, processor, THREADS, statesPerThread);
 
                 explore(stateSpaceExplorer, explorerUtilities, " Parallel " + statesPerThread);
 
@@ -126,7 +131,6 @@ public class Main {
              Input stateInputStream = new Input(stateStream)) {
             MultiStateReader reader = new EntireStateReader(kryoIo);
             List<Record> records = new ArrayList<>(reader.readRecords(inputStream));
-//            Map<Integer, ClassifiedState> mappings = reader.readStates(stateInputStream);
 
             SteadyStateBuilder builder = new SteadyStateBuilderImpl();
             ExecutorService executorService = null;
@@ -142,14 +146,14 @@ public class Main {
                     solverName = "sequential Gauss-Seidel";
                 }
             } else {
-                executorService = Executors.newFixedThreadPool(8);
+                executorService = Executors.newFixedThreadPool(THREADS);
                 if (cmd.hasOption("j")) {
                     Integer maxIterations = Integer.valueOf(cmd.getOptionValue("b"));
-                    solver = builder.buildBoundedParallelJacobiSolver(executorService, 8, maxIterations);
+                    solver = builder.buildBoundedParallelJacobiSolver(executorService, THREADS, maxIterations);
                     solverName = "parallel jacobi with a bound of " + maxIterations;
                 } else {
                     Integer subIterations = Integer.valueOf(cmd.getOptionValue("sub"));
-                    solver = builder.buildAsynchronousGaussSeidel(executorService, 8, subIterations);
+                    solver = builder.buildAsynchronousGaussSeidel(executorService, THREADS, subIterations);
                     solverName = "asynchronous Gauss-Seidel with " + subIterations + " sub iterations";
                 }
             }
@@ -160,7 +164,8 @@ public class Main {
         }
     }
     private static Map<Integer, Double> solve(SteadyStateSolver solver, List<Record> records, String method) {
-        System.out.println("****** Solving steady state with method: " + method + " *******");
+        LOGGER.log(Level.INFO, "Solving steady state with method: " + method);
+        LOGGER.log(Level.INFO, "***********************************************************");
         return solver.solve(records);
     }
 
@@ -190,12 +195,12 @@ public class Main {
 
     private static void explore(StateSpaceExplorer explorer,  ExplorerUtilities explorerUtilities, String name)
             throws InterruptedException, ExecutionException, IOException, TimelessTrapException, InvalidRateException {
-        System.out.println("Starting " + name);
-        System.out.println("========================");
+        LOGGER.log(Level.INFO, "Starting " + name);
+        LOGGER.log(Level.INFO, "========================");
         StateSpaceExplorer.StateSpaceExplorerResults result = explorer.generate(explorerUtilities.getCurrentState());
 
-        System.out.println("Processed transitions: " + result.processedTransitions);
-        System.out.println(result.numberOfStates + " different states");
+        LOGGER.log(Level.INFO, "Processed transitions: " + result.processedTransitions);
+        LOGGER.log(Level.INFO, result.numberOfStates + " different states");
     }
 
 

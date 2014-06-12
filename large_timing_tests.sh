@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-FILES=models/pipe5_large/*
+FILES=models/pipe5_large_tests/*
 for f in $FILES
 do
   echo "Processing $f file..."
