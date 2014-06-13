@@ -104,6 +104,8 @@ public class Main {
         int threads = Integer.valueOf(cmd.getOptionValue("t"));
 
         KryoStateIO kryoIo = new KryoStateIO();
+        Files.deleteIfExists(Paths.get("trans.tmp"));
+        Files.deleteIfExists(Paths.get("state.tmp"));
         Path transitions = Files.createFile(Paths.get("trans.tmp"));
         Path state = Files.createFile(Paths.get("state.tmp"));
         try (OutputStream transitionByteStream = Files.newOutputStream(transitions);
@@ -179,6 +181,8 @@ public class Main {
             throws IOException, InterruptedException, TimelessTrapException, ExecutionException, InvalidRateException {
 
         KryoStateIO kryoIo = new KryoStateIO();
+        Files.deleteIfExists(Paths.get("trans.tmp"));
+        Files.deleteIfExists(Paths.get("state.tmp"));
         Path transitions = Files.createFile(Paths.get("trans.tmp"));
         Path state = Files.createFile(Paths.get("state.tmp"));
         try (OutputStream transitionByteStream = Files.newOutputStream(transitions);
