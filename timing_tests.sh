@@ -1,4 +1,9 @@
 #!/bin/bash
+# $1 = directory
+# $2 = number of threads
+
+dir=$2_threads_results
+mkdir -p $dir
 
 
 FILES=$1/*
@@ -7,5 +12,5 @@ do
   echo "Processing $f file..."
   filename="${f##*/}"
 
-./process.sh $f > results/$filename.dat 2>&1
+./process.sh $f $2 > $dir/$filename.dat 2>&1
 done

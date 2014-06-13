@@ -41,13 +41,12 @@ public class Main {
      */
     private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
 
-    private static final int THREADS = 4;
-
     /**
      * Command line options
      */
     private static final Options options = new Options();
     static {
+        options.addOption("t", true, "Number of threads to use");
         options.addOption("f", true, "File to parse");
         options.addOption("s", false, "Run sequentially");
         options.addOption("p", true, "Run in parallel with the specified number of threads per state");
@@ -101,6 +100,8 @@ public class Main {
     private static void processParallel(PetriNet petriNet, int statesPerThread, CommandLine cmd)
             throws IOException, InterruptedException, TimelessTrapException, ExecutionException, InvalidRateException {
 
+        int threads = Integer.valueOf(cmd.getOptionValue("t"));
+
         KryoStateIO kryoIo = new KryoStateIO();
         Path transitions = Files.createTempFile("trans", ".tmp");
         Path state = Files.createTempFile("state", ".tmp");
@@ -112,7 +113,7 @@ public class Main {
                 VanishingExplorer vanishingExplorer = new OnTheFlyVanishingExplorer(explorerUtilities);
 
                 MassiveParallelStateSpaceExplorer stateSpaceExplorer =
-                        new MassiveParallelStateSpaceExplorer(explorerUtilities, vanishingExplorer, processor, THREADS, statesPerThread);
+                        new MassiveParallelStateSpaceExplorer(explorerUtilities, vanishingExplorer, processor, threads, statesPerThread);
 
                 explore(stateSpaceExplorer, explorerUtilities, " Parallel " + statesPerThread);
 
@@ -146,14 +147,15 @@ public class Main {
                     solverName = "sequential Gauss-Seidel";
                 }
             } else {
-                executorService = Executors.newFixedThreadPool(THREADS);
+                int threads = Integer.valueOf(cmd.getOptionValue("t"));
+                executorService = Executors.newFixedThreadPool(threads);
                 if (cmd.hasOption("j")) {
                     Integer maxIterations = Integer.valueOf(cmd.getOptionValue("b"));
-                    solver = builder.buildBoundedParallelJacobiSolver(executorService, THREADS, maxIterations);
+                    solver = builder.buildBoundedParallelJacobiSolver(executorService, threads, maxIterations);
                     solverName = "parallel jacobi with a bound of " + maxIterations;
                 } else {
                     Integer subIterations = Integer.valueOf(cmd.getOptionValue("sub"));
-                    solver = builder.buildAsynchronousGaussSeidel(executorService, THREADS, subIterations);
+                    solver = builder.buildAsynchronousGaussSeidel(executorService, threads, subIterations);
                     solverName = "asynchronous Gauss-Seidel with " + subIterations + " sub iterations";
                 }
             }
