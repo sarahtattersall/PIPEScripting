@@ -23,6 +23,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -103,8 +104,8 @@ public class Main {
         int threads = Integer.valueOf(cmd.getOptionValue("t"));
 
         KryoStateIO kryoIo = new KryoStateIO();
-        Path transitions = Files.createTempFile("trans", ".tmp");
-        Path state = Files.createTempFile("state", ".tmp");
+        Path transitions = Files.createFile(Paths.get("trans.tmp"));
+        Path state = Files.createFile(Paths.get("state.tmp"));
         try (OutputStream transitionByteStream = Files.newOutputStream(transitions);
              OutputStream stateByteStream = Files.newOutputStream(state)) {
             try (Output transitionOutputStream = new Output(transitionByteStream); Output stateOutputStream = new Output(stateByteStream)) {
@@ -121,6 +122,9 @@ public class Main {
             if (cmd.hasOption("ss")) {
                 solveSteadyState(kryoIo, transitions, state, cmd);
             }
+        } finally {
+            Files.delete(transitions);
+            Files.delete(state);
         }
 
     }
@@ -175,8 +179,8 @@ public class Main {
             throws IOException, InterruptedException, TimelessTrapException, ExecutionException, InvalidRateException {
 
         KryoStateIO kryoIo = new KryoStateIO();
-        Path transitions = Files.createTempFile("trans", ".tmp");
-        Path state = Files.createTempFile("state", ".tmp");
+        Path transitions = Files.createFile(Paths.get("trans.tmp"));
+        Path state = Files.createFile(Paths.get("state.tmp"));
         try (OutputStream transitionByteStream = Files.newOutputStream(transitions);
              OutputStream stateByteStream = Files.newOutputStream(state)) {
             try (Output transitionOutputStream = new Output(transitionByteStream); Output stateOutputStream = new Output(stateByteStream)) {
@@ -192,6 +196,9 @@ public class Main {
             if (cmd.hasOption("ss")) {
                 solveSteadyState(kryoIo, transitions, state, cmd);
             }
+        }  finally {
+            Files.delete(transitions);
+            Files.delete(state);
         }
     }
 
