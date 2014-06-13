@@ -13,5 +13,5 @@ do
   echo "Processing $f file..."
   filename="${f##*/}"
 
-# ./process.sh $f $2 > $dir/$filename.dat 2>&1
+./process.sh $f $2 > $dir/$filename.dat 2>&1
 done
