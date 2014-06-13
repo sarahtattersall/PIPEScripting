@@ -1,0 +1,49 @@
+*********** models/gs_tests/11025.xml ************
+Jun 13, 2014 12:48:28 PM script.Main explore
+INFO: Starting  Sequential 
+Jun 13, 2014 12:48:28 PM script.Main explore
+INFO: ========================
+Jun 13, 2014 12:48:33 PM pipe.reachability.algorithm.sequential.SequentialStateSpaceExplorer stateSpaceExploration
+INFO: Took 11025 iterations to explore state space
+Jun 13, 2014 12:48:33 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
+INFO: Took 5291938871 to solve state space
+Jun 13, 2014 12:48:33 PM script.Main explore
+INFO: Processed transitions: 64680
+Jun 13, 2014 12:48:33 PM script.Main explore
+INFO: 11025 different states
+Jun 13, 2014 12:48:34 PM script.Main explore
+INFO: Starting  Parallel 100
+Jun 13, 2014 12:48:34 PM script.Main explore
+INFO: ========================
+Jun 13, 2014 12:48:36 PM pipe.reachability.algorithm.parallel.MassiveParallelStateSpaceExplorer stateSpaceExploration
+INFO: Took 29 iterations to explore state space
+Jun 13, 2014 12:48:36 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
+INFO: Took 2493370630 to solve state space
+Jun 13, 2014 12:48:36 PM script.Main explore
+INFO: Processed transitions: 64680
+Jun 13, 2014 12:48:36 PM script.Main explore
+INFO: 11025 different states
+Jun 13, 2014 12:48:37 PM script.Main explore
+INFO: Starting  Parallel 200
+Jun 13, 2014 12:48:37 PM script.Main explore
+INFO: ========================
+Jun 13, 2014 12:48:39 PM pipe.reachability.algorithm.parallel.MassiveParallelStateSpaceExplorer stateSpaceExploration
+INFO: Took 15 iterations to explore state space
+Jun 13, 2014 12:48:40 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
+INFO: Took 2586191421 to solve state space
+Jun 13, 2014 12:48:40 PM script.Main explore
+INFO: Processed transitions: 64689
+Jun 13, 2014 12:48:40 PM script.Main explore
+INFO: 11025 different states
+Jun 13, 2014 12:48:40 PM script.Main explore
+INFO: Starting  Parallel 500
+Jun 13, 2014 12:48:40 PM script.Main explore
+INFO: ========================
+Jun 13, 2014 12:48:43 PM pipe.reachability.algorithm.parallel.MassiveParallelStateSpaceExplorer stateSpaceExploration
+INFO: Took 7 iterations to explore state space
+Jun 13, 2014 12:48:43 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
+INFO: Took 2542839311 to solve state space
+Jun 13, 2014 12:48:43 PM script.Main explore
+INFO: Processed transitions: 64680
+Jun 13, 2014 12:48:43 PM script.Main explore
+INFO: 11025 different states
