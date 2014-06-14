@@ -1,0 +1,13 @@
+file   states   state space         steady state
+1.xml: 2 states 29698000 ns
+2.xml 10 states 55391000 ns
+3.xml 40 states 212405000 ns          134000 ns
+4.xml 100 states 406920000 ns         205000 ns
+5.xml 1000 states 34162941000 ns      OOM
+6.xml 225 states 10900680000 ns       594000 ns
+7.xml 441 states                      1496000
+8.xml
+9.xml 675 30206932000ns               6522000
+10.xml OOM
+11.xml OOM
+12.xml OOM
