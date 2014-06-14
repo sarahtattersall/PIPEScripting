@@ -1,0 +1,19 @@
+Generate Ends, 40 states found with 156 arcs.
+Creating reachability graph, please wait...
+The steady space graph has been calculated in 408912568 nanoseconds
+
+Generate Ends, 100 states found with 480 arcs.
+Creating reachability graph, please wait...
+The steady space graph has been calculated in 194406108 nanoseconds
+
+Generate Ends, 625 states found with 4000 arcs.
+Creating reachability graph, please wait...
+The steady space graph has been calculated in 20805020761 nanoseconds
+
+Generate Ends, 1350 states found with 9450 arcs.
+Creating reachability graph, please wait...
+The steady space graph has been calculated in 66966807098 nanoseconds
+
+
+There are 4096 states with 28672 arcs. The graph is too big to be displayed properly.
+The steady space graph has been calculated in 561977940482 nanoseconds
