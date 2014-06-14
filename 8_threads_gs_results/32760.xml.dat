@@ -1,0 +1,35 @@
+*********** models/gs_tests/32760.xml ************
+Java HotSpot(TM) 64-Bit Server VM warning: Insufficient space for shared memory file:
+   /tmp/hsperfdata_st809/3876
+Try using the -Djava.io.tmpdir= option to select an alternate temp location.
+
+Jun 14, 2014 4:14:30 PM script.Main explore
+INFO: Starting  Sequential 
+Jun 14, 2014 4:14:30 PM script.Main explore
+INFO: ========================
+Jun 14, 2014 4:14:58 PM pipe.reachability.algorithm.sequential.SequentialStateSpaceExplorer stateSpaceExploration
+INFO: Took 32768 iterations to explore state space
+Jun 14, 2014 4:14:58 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
+INFO: Took 28229212782 to solve state space
+Jun 14, 2014 4:14:58 PM script.Main explore
+INFO: Processed transitions: 286720
+Jun 14, 2014 4:14:58 PM script.Main explore
+INFO: 32768 different states
+Jun 14, 2014 4:14:58 PM script.Main solve
+INFO: Solving steady state with method: sequential Gauss-Seidel
+Jun 14, 2014 4:14:58 PM script.Main solve
+INFO: ***********************************************************
+Jun 14, 2014 4:16:16 PM pipe.steadystate.algorithm.GaussSeidelSolver solve
+INFO: Took 5270 iterations to converge
+Jun 14, 2014 4:16:16 PM pipe.steadystate.algorithm.AXEqualsBSolver timeAndSolve
+INFO: Steady state solved in 77951823098
+Java HotSpot(TM) 64-Bit Server VM warning: Insufficient space for shared memory file:
+   /tmp/hsperfdata_st809/4057
+Try using the -Djava.io.tmpdir= option to select an alternate temp location.
+
+Exception in thread "main" java.lang.NumberFormatException: For input string: "models/gs_tests/32760.xml"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:492)
+	at java.lang.Integer.valueOf(Integer.java:582)
+	at script.Main.processParallel(Main.java:104)
+	at script.Main.main(Main.java:89)

@@ -1,0 +1,25 @@
+*********** models/gs_tests/32760.xml ************
+Java HotSpot(TM) 64-Bit Server VM warning: Insufficient space for shared memory file:
+   /tmp/hsperfdata_st809/5262
+Try using the -Djava.io.tmpdir= option to select an alternate temp location.
+
+Jun 14, 2014 4:35:09 PM script.Main explore
+INFO: Starting  Sequential 
+Jun 14, 2014 4:35:09 PM script.Main explore
+INFO: ========================
+Jun 14, 2014 4:35:37 PM pipe.reachability.algorithm.sequential.SequentialStateSpaceExplorer stateSpaceExploration
+INFO: Took 32768 iterations to explore state space
+Jun 14, 2014 4:35:37 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
+INFO: Took 27318015361 to solve state space
+Jun 14, 2014 4:35:37 PM script.Main explore
+INFO: Processed transitions: 286720
+Jun 14, 2014 4:35:37 PM script.Main explore
+INFO: 32768 different states
+Jun 14, 2014 4:35:37 PM script.Main solve
+INFO: Solving steady state with method: sequential Gauss-Seidel
+Jun 14, 2014 4:35:37 PM script.Main solve
+INFO: ***********************************************************
+Jun 14, 2014 4:36:53 PM pipe.steadystate.algorithm.GaussSeidelSolver solve
+INFO: Took 5270 iterations to converge
+Jun 14, 2014 4:36:53 PM pipe.steadystate.algorithm.AXEqualsBSolver timeAndSolve
+INFO: Steady state solved in 76153604976
