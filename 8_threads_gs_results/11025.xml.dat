@@ -1,35 +1,73 @@
 *********** models/gs_tests/11025.xml ************
 Java HotSpot(TM) 64-Bit Server VM warning: Insufficient space for shared memory file:
-   /tmp/hsperfdata_st809/3748
+   /tmp/hsperfdata_st809/7356
 Try using the -Djava.io.tmpdir= option to select an alternate temp location.
 
-Jun 14, 2014 4:14:01 PM script.Main explore
-INFO: Starting  Sequential 
-Jun 14, 2014 4:14:01 PM script.Main explore
+Jun 14, 2014 4:48:50 PM script.Main explore
+INFO: Starting  Parallel 100
+Jun 14, 2014 4:48:50 PM script.Main explore
 INFO: ========================
-Jun 14, 2014 4:14:06 PM pipe.reachability.algorithm.sequential.SequentialStateSpaceExplorer stateSpaceExploration
-INFO: Took 11025 iterations to explore state space
-Jun 14, 2014 4:14:06 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
-INFO: Took 5141195800 to solve state space
-Jun 14, 2014 4:14:06 PM script.Main explore
+Jun 14, 2014 4:48:52 PM pipe.reachability.algorithm.parallel.MassiveParallelStateSpaceExplorer stateSpaceExploration
+INFO: Took 15 iterations to explore state space
+Jun 14, 2014 4:48:52 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
+INFO: Took 2384795184 to solve state space
+Jun 14, 2014 4:48:52 PM script.Main explore
 INFO: Processed transitions: 64680
-Jun 14, 2014 4:14:06 PM script.Main explore
+Jun 14, 2014 4:48:52 PM script.Main explore
 INFO: 11025 different states
-Jun 14, 2014 4:14:06 PM script.Main solve
-INFO: Solving steady state with method: sequential Gauss-Seidel
-Jun 14, 2014 4:14:06 PM script.Main solve
+Jun 14, 2014 4:48:53 PM script.Main solve
+INFO: Solving steady state with method: asynchronous Gauss-Seidel with 1 sub iterations
+Jun 14, 2014 4:48:53 PM script.Main solve
 INFO: ***********************************************************
-Jun 14, 2014 4:14:11 PM pipe.steadystate.algorithm.GaussSeidelSolver solve
-INFO: Took 1382 iterations to converge
-Jun 14, 2014 4:14:11 PM pipe.steadystate.algorithm.AXEqualsBSolver timeAndSolve
-INFO: Steady state solved in 4717332869
+Jun 14, 2014 4:48:53 PM pipe.steadystate.algorithm.ParallelGaussSeidel solve
+INFO: Took 301 iterations to converge
+Jun 14, 2014 4:48:53 PM pipe.steadystate.algorithm.AXEqualsBSolver timeAndSolve
+INFO: Steady state solved in 569683639
 Java HotSpot(TM) 64-Bit Server VM warning: Insufficient space for shared memory file:
-   /tmp/hsperfdata_st809/3770
+   /tmp/hsperfdata_st809/7391
 Try using the -Djava.io.tmpdir= option to select an alternate temp location.
 
-Exception in thread "main" java.lang.NumberFormatException: For input string: "models/gs_tests/11025.xml"
-	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-	at java.lang.Integer.parseInt(Integer.java:492)
-	at java.lang.Integer.valueOf(Integer.java:582)
-	at script.Main.processParallel(Main.java:104)
-	at script.Main.main(Main.java:89)
+Jun 14, 2014 4:48:54 PM script.Main explore
+INFO: Starting  Parallel 100
+Jun 14, 2014 4:48:54 PM script.Main explore
+INFO: ========================
+Jun 14, 2014 4:48:56 PM pipe.reachability.algorithm.parallel.MassiveParallelStateSpaceExplorer stateSpaceExploration
+INFO: Took 15 iterations to explore state space
+Jun 14, 2014 4:48:56 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
+INFO: Took 2380095988 to solve state space
+Jun 14, 2014 4:48:56 PM script.Main explore
+INFO: Processed transitions: 64680
+Jun 14, 2014 4:48:56 PM script.Main explore
+INFO: 11025 different states
+Jun 14, 2014 4:48:56 PM script.Main solve
+INFO: Solving steady state with method: asynchronous Gauss-Seidel with 5 sub iterations
+Jun 14, 2014 4:48:56 PM script.Main solve
+INFO: ***********************************************************
+Jun 14, 2014 4:48:57 PM pipe.steadystate.algorithm.ParallelGaussSeidel solve
+INFO: Took 61 iterations to converge
+Jun 14, 2014 4:48:57 PM pipe.steadystate.algorithm.AXEqualsBSolver timeAndSolve
+INFO: Steady state solved in 347262559
+Java HotSpot(TM) 64-Bit Server VM warning: Insufficient space for shared memory file:
+   /tmp/hsperfdata_st809/7427
+Try using the -Djava.io.tmpdir= option to select an alternate temp location.
+
+Jun 14, 2014 4:48:57 PM script.Main explore
+INFO: Starting  Parallel 100
+Jun 14, 2014 4:48:57 PM script.Main explore
+INFO: ========================
+Jun 14, 2014 4:49:00 PM pipe.reachability.algorithm.parallel.MassiveParallelStateSpaceExplorer stateSpaceExploration
+INFO: Took 15 iterations to explore state space
+Jun 14, 2014 4:49:00 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
+INFO: Took 2363146863 to solve state space
+Jun 14, 2014 4:49:00 PM script.Main explore
+INFO: Processed transitions: 64703
+Jun 14, 2014 4:49:00 PM script.Main explore
+INFO: 11025 different states
+Jun 14, 2014 4:49:00 PM script.Main solve
+INFO: Solving steady state with method: asynchronous Gauss-Seidel with 10 sub iterations
+Jun 14, 2014 4:49:00 PM script.Main solve
+INFO: ***********************************************************
+Jun 14, 2014 4:49:00 PM pipe.steadystate.algorithm.ParallelGaussSeidel solve
+INFO: Took 33 iterations to converge
+Jun 14, 2014 4:49:00 PM pipe.steadystate.algorithm.AXEqualsBSolver timeAndSolve
+INFO: Steady state solved in 347104744

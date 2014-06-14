@@ -1,25 +1,25 @@
 *********** models/gs_tests/58778.xml ************
 Java HotSpot(TM) 64-Bit Server VM warning: Insufficient space for shared memory file:
-   /tmp/hsperfdata_st809/5321
+   /tmp/hsperfdata_st809/11633
 Try using the -Djava.io.tmpdir= option to select an alternate temp location.
 
-Jun 14, 2014 4:36:54 PM script.Main explore
+Jun 14, 2014 5:19:07 PM script.Main explore
 INFO: Starting  Sequential 
-Jun 14, 2014 4:36:54 PM script.Main explore
+Jun 14, 2014 5:19:07 PM script.Main explore
 INFO: ========================
-Jun 14, 2014 4:37:21 PM pipe.reachability.algorithm.sequential.SequentialStateSpaceExplorer stateSpaceExploration
+Jun 14, 2014 5:19:34 PM pipe.reachability.algorithm.sequential.SequentialStateSpaceExplorer stateSpaceExploration
 INFO: Took 58800 iterations to explore state space
-Jun 14, 2014 4:37:21 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
-INFO: Took 27040115430 to solve state space
-Jun 14, 2014 4:37:21 PM script.Main explore
+Jun 14, 2014 5:19:34 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
+INFO: Took 27235132732 to solve state space
+Jun 14, 2014 5:19:34 PM script.Main explore
 INFO: Processed transitions: 415030
-Jun 14, 2014 4:37:21 PM script.Main explore
+Jun 14, 2014 5:19:34 PM script.Main explore
 INFO: 58800 different states
-Jun 14, 2014 4:37:21 PM script.Main solve
+Jun 14, 2014 5:19:35 PM script.Main solve
 INFO: Solving steady state with method: sequential Gauss-Seidel
-Jun 14, 2014 4:37:21 PM script.Main solve
+Jun 14, 2014 5:19:35 PM script.Main solve
 INFO: ***********************************************************
-Jun 14, 2014 4:37:59 PM pipe.steadystate.algorithm.GaussSeidelSolver solve
+Jun 14, 2014 5:20:12 PM pipe.steadystate.algorithm.GaussSeidelSolver solve
 INFO: Took 1414 iterations to converge
-Jun 14, 2014 4:37:59 PM pipe.steadystate.algorithm.AXEqualsBSolver timeAndSolve
-INFO: Steady state solved in 37169464903
+Jun 14, 2014 5:20:12 PM pipe.steadystate.algorithm.AXEqualsBSolver timeAndSolve
+INFO: Steady state solved in 36753516134
