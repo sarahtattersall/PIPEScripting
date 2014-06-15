@@ -1,12 +1,12 @@
-Jun 13, 2014 3:11:12 PM script.Main explore
+Jun 15, 2014 1:16:46 PM script.Main explore
 INFO: Starting  Parallel 100
-Jun 13, 2014 3:11:12 PM script.Main explore
+Jun 15, 2014 1:16:46 PM script.Main explore
 INFO: ========================
-Jun 13, 2014 3:13:20 PM pipe.reachability.algorithm.parallel.MassiveParallelStateSpaceExplorer stateSpaceExploration
+Jun 15, 2014 1:18:46 PM pipe.reachability.algorithm.parallel.MassiveParallelStateSpaceExplorer stateSpaceExploration
 INFO: Took 834 iterations to explore state space
-Jun 13, 2014 3:13:20 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
-INFO: Took 127750195215 to solve state space
-Jun 13, 2014 3:13:20 PM script.Main explore
-INFO: Processed transitions: 3502091
-Jun 13, 2014 3:13:20 PM script.Main explore
+Jun 15, 2014 1:18:46 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
+INFO: Took 120103985846 to solve state space
+Jun 15, 2014 1:18:46 PM script.Main explore
+INFO: Processed transitions: 3502097
+Jun 15, 2014 1:18:46 PM script.Main explore
 INFO: 331776 different states
