@@ -1,12 +1,12 @@
-Jun 15, 2014 5:13:16 PM script.Main explore
+Jun 16, 2014 1:11:55 AM script.Main explore
 INFO: Starting  Sequential 
-Jun 15, 2014 5:13:16 PM script.Main explore
+Jun 16, 2014 1:11:55 AM script.Main explore
 INFO: ========================
-Jun 15, 2014 5:14:45 PM pipe.reachability.algorithm.sequential.SequentialStateSpaceExplorer stateSpaceExploration
+Jun 16, 2014 1:13:16 AM pipe.reachability.algorithm.sequential.SequentialStateSpaceExplorer stateSpaceExploration
 INFO: Took 98304 iterations to explore state space
-Jun 15, 2014 5:14:45 PM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
-INFO: Took 88633369210 to solve state space
-Jun 15, 2014 5:14:45 PM script.Main explore
+Jun 16, 2014 1:13:16 AM pipe.reachability.algorithm.AbstractStateSpaceExplorer generate
+INFO: Took 80698897364 to solve state space
+Jun 16, 2014 1:13:16 AM script.Main explore
 INFO: Processed transitions: 991232
-Jun 15, 2014 5:14:45 PM script.Main explore
+Jun 16, 2014 1:13:16 AM script.Main explore
 INFO: 98304 different states
